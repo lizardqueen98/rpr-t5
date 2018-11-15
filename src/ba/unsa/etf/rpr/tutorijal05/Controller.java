@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 
 public class Controller {
-    private enum Operator {ADD, SUB, MUL, DIV, MOD, EQU};
+    private enum Operator {PLUS, MINUS, MNOZENJE, DIJELJENJE, JEDNAKO, MOD};
     private SimpleStringProperty number;
 
     public Controller() {
@@ -17,6 +17,7 @@ public class Controller {
     public String getNumber() {
         return number.get();
     }
+
 
     public void btnDot(ActionEvent actionEvent) {
     }
@@ -67,5 +68,6 @@ public class Controller {
     }
 
     public void btn0(ActionEvent actionEvent) {
+
     }
 }
