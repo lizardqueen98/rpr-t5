@@ -88,6 +88,15 @@ class MainTest {
         robot.clickOn("#equalsBtn");
         assertEquals("579.0", display.getText());
     }
+    @Test
+    public void mulNull(FxRobot robot){
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn8");
+        robot.clickOn("#mulBtn");
+        robot.clickOn("#btn0");
+        robot.clickOn("#equalsBtn");
+        assertEquals("0.0", display.getText());
+    }
 
     @Test
     public void divNull(FxRobot robot){
@@ -122,6 +131,17 @@ class MainTest {
         robot.clickOn("#btn3");
         robot.clickOn("#equalsBtn");
         assertEquals("193.0", display.getText());
+    }
+    @Test
+    public void number123Plus456Mul3x (FxRobot robot) {
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn2");
+        robot.clickOn("#mulBtn");
+        robot.clickOn("#btn4");
+        robot.clickOn("#mulBtn");
+        robot.clickOn("#mulBtn");
+        robot.clickOn("#mulBtn");
+        assertEquals("4096.0", display.getText());
     }
     @Test
     public void dotBtn (FxRobot robot) {
