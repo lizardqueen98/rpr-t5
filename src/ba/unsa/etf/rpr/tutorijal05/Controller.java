@@ -47,11 +47,9 @@ public class Controller {
                 result*= operand;
                 break;
             case DIJELJENJE:
-                //Err
                 result /= operand;
                 break;
             case MOD:
-                //Err
                 result %= operand;
                 break;
         }
