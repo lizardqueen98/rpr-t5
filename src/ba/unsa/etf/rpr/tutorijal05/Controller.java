@@ -1,8 +1,22 @@
 package ba.unsa.etf.rpr.tutorijal05;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 
 public class Controller {
+    private enum Operator {ADD, SUB, MUL, DIV, MOD, EQU};
+    private SimpleStringProperty number;
+
+    public Controller() {
+        number = new SimpleStringProperty();
+        number.set("0");
+    }
+    public SimpleStringProperty numberProperty() {
+        return number;
+    }
+    public String getNumber() {
+        return number.get();
+    }
 
     public void btnDot(ActionEvent actionEvent) {
     }
