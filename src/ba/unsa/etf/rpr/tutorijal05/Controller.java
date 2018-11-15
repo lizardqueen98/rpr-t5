@@ -8,6 +8,7 @@ public class Controller {
     private SimpleStringProperty number;
     private Operator operator = Operator.JEDNAKO;
     private double result = 0;
+    private boolean unesen=false;
     public Controller() {
         number = new SimpleStringProperty();
         number.set("0");
@@ -19,17 +20,20 @@ public class Controller {
         return number.get();
     }
     private void staviBroj(String num) {
-
-        if((getNumber().equals("0") && !num.equals("."))) {
-            numberProperty().setValue(num);
+        if(unesen){
+            numberProperty().setValue("");
+            unesen=false;
         }
-
+        else if((getNumber().equals("0") && !num.equals("."))) {
+            numberProperty().setValue(num);
+            return;
+        }
         numberProperty().setValue(getNumber().concat(num));
     }
     private void racun(Operator o) {
         double operand = Double.valueOf(getNumber());
 
-        switch (o) {
+        switch (operator) {
             case JEDNAKO:
                 result = operand;
                 break;
@@ -52,9 +56,9 @@ public class Controller {
                 break;
         }
 
-        numberProperty().setValue("" + result);
-        //oClear = true;
-        //operator = o;
+        numberProperty().setValue(String.valueOf(result));
+        operator = o;
+        unesen=true;
     }
 
     public void btnDot(ActionEvent actionEvent) {
