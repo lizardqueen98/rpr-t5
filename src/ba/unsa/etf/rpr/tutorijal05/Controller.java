@@ -29,7 +29,7 @@ public class Controller {
     private void racun(Operator o) {
         double operand = Double.valueOf(getNumber());
 
-        switch (operator) {
+        switch (o) {
             case JEDNAKO:
                 result = operand;
                 break;
@@ -54,28 +54,35 @@ public class Controller {
 
         numberProperty().setValue("" + result);
         //oClear = true;
-        operator = o;
+        //operator = o;
     }
 
     public void btnDot(ActionEvent actionEvent) {
+        staviBroj(".");
     }
 
     public void btnEquals(ActionEvent actionEvent) {
+        racun(Operator.JEDNAKO);
     }
 
     public void btnDiv(ActionEvent actionEvent) {
+        racun(Operator.DIJELJENJE);
     }
 
     public void btnAdd(ActionEvent actionEvent) {
+        racun(Operator.PLUS);
     }
 
     public void btnMod(ActionEvent actionEvent) {
+        racun(Operator.MOD);
     }
 
     public void btnMul(ActionEvent actionEvent) {
+        racun(Operator.MNOZENJE);
     }
 
     public void btnSub(ActionEvent actionEvent) {
+        racun(Operator.MINUS);
     }
 
     public void btn7(ActionEvent actionEvent) {
