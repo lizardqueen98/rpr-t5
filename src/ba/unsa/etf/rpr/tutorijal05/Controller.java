@@ -3,7 +3,10 @@ package ba.unsa.etf.rpr.tutorijal05;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 
-public class Controller {
+import static java.lang.Math.round;
+
+public class Controller
+{
     private enum Operator {PLUS, MINUS, MNOZENJE, DIJELJENJE, JEDNAKO, MOD};
     private SimpleStringProperty number;
     private Operator operator = Operator.JEDNAKO;
@@ -19,6 +22,7 @@ public class Controller {
     public String getNumber() {
         return number.get();
     }
+
     private void staviBroj(String num) {
         if(unesen){
             numberProperty().setValue("");
