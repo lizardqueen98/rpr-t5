@@ -1,8 +1,8 @@
 #equalsBtn {
-    -fx-background-color: #red;
+    -fx-background-color: RED;
 }
 
 #display {
-    -fx-background-color: #green;
+    -fx-background-color: GREEN;
     -fx-padding: 5px;
 }
